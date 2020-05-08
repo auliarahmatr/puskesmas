@@ -41,6 +41,9 @@ if(!isset($_SESSION['user'])) {
                     <a href="<?=base_url('dokter/data.php')?>">Data Dokter</a>
                 </li>
                 <li>
+                    <a href="#">Data Tenaga Medis</a>
+                </li>
+                <li>
                     <a href="<?=base_url('poliklinik/data.php')?>">Data Poliklinik</a>
                 </li>
                 <li>
