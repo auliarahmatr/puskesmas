@@ -8,14 +8,15 @@ use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 if(isset($_POST['add'])) {
     $uuid = Uuid::uuid4()->toString();
     $nama = trim(mysqli_real_escape_string($con, $_POST['nama']));
-    $spesialis = trim(mysqli_real_escape_string($con, $_POST['spesialis']));
+    $jenkel = trim(mysqli_real_escape_string($con, $_POST['jenkel']));
+    $jabatan = trim(mysqli_real_escape_string($con, $_POST['jabatan']));
     $alamat = trim(mysqli_real_escape_string($con, $_POST['alamat']));
     $no_telp = trim(mysqli_real_escape_string($con, $_POST['no_telp']));
     $user = trim(mysqli_real_escape_string($con, $_POST['user']));
     $pass = trim(mysqli_real_escape_string($con, $_POST['password']));
     $passhash = password_hash($pass, PASSWORD_DEFAULT);
-    mysqli_query($con, "INSERT INTO tb_dokter (id_dokter, nama_dokter, spesialis, alamat, no_telp, username, password) 
-                            VALUES ('$uuid', '$nama', '$spesialis', '$alamat', '$no_telp', '$user', '$passhash')") or die (mysqli_error($con));
+    mysqli_query($con, "INSERT INTO tb_nakes (id_nakes, nama_nakes, jenis_kelamin, jabatan, alamat, no_telp, username, password) 
+                            VALUES ('$uuid', '$nama', '$jenkel', '$jabatan', '$alamat', '$no_telp', '$user', '$passhash')") or die (mysqli_error($con));
     echo "<script>window.location='data.php';</script>";  
 } else if(isset($_POST['edit'])) {
     $id = $_POST['id'];

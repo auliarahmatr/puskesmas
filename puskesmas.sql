@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20 Mei 2020 pada 18.56
+-- Generation Time: 20 Mei 2020 pada 20.33
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -44,6 +44,24 @@ CREATE TABLE `tb_dokter` (
 
 INSERT INTO `tb_dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_telp`, `username`, `password`) VALUES
 ('74e808a1-40bf-444c-b69b-1e6dd6705d1e', 'Dr. Aulia Rahmat R', 'Umum', 'JL. BATU', '08122244005', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_nakes`
+--
+
+CREATE TABLE `tb_nakes` (
+  `id_nakes` varchar(50) NOT NULL,
+  `nama_nakes` varchar(90) NOT NULL,
+  `jenis_kelamin` enum('L','P') NOT NULL,
+  `jabatan` varchar(80) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_telp` varchar(15) NOT NULL,
+  `foto` varchar(90) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -194,6 +212,12 @@ INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `level`) 
 --
 ALTER TABLE `tb_dokter`
   ADD PRIMARY KEY (`id_dokter`);
+
+--
+-- Indexes for table `tb_nakes`
+--
+ALTER TABLE `tb_nakes`
+  ADD PRIMARY KEY (`id_nakes`);
 
 --
 -- Indexes for table `tb_obat`

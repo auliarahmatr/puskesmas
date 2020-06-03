@@ -58,17 +58,21 @@ if (isset($_SESSION['user'])) {
                                             $user = $_POST['user'];
                                             $pass = $_POST['pass'];
 
-                                            $login = mysqli_query($con, "SELECT * FROM tb_user WHERE username = '$user'");
-                                            $row   = mysqli_fetch_assoc($login);
+                                            $dokter = mysqli_query($con, "SELECT * FROM tb_dokter WHERE username = '$user'");
+                                            $row    = mysqli_fetch_assoc($dokter);
 
-                                            if ($login and !$row['username'] == "") {
+                                            $admin = mysqli_query($con, "SELECT * FROM tb_user WHERE username = '$user'");
+                                            $data    = mysqli_fetch_assoc($admin);
+
+                                            $nakes = mysqli_query($con, "SELECT * FROM tb_nakes WHERE username = '$user'");
+                                            $data    = mysqli_fetch_assoc($nakes);
+                                            
+                                            if (mysqli_num_rows($dokter) > 0) {
                                                 // cek password
                                                 if (password_verify($pass, $row['password'])) {
                                                     $_SESSION['user']       = $row['username'];
-                                                    $_SESSION['level']      = $row['level'];
-                                                    header("location:http://localhost/puskesmas");
-
-                                                    // echo "<script>window.location='../dashboard/index.php'</script>";
+                                                    $_SESSION['level']      = 'Dokter';
+                                                    header("location:http://localhost/puskesmas-master");
                                                 } else { ?>
                                                     <br>
                                                     <div class="row" style="height: 50px; text-align:center">
@@ -84,8 +88,54 @@ if (isset($_SESSION['user'])) {
                                                         </div>
                                                         <div class="col-md-1"></div>
                                                     </div>
-                                                <?php }
-                                            } else { ?>
+                                                <?php } ?>
+                                            <?php } elseif (mysqli_num_rows($admin) > 0) { ?>
+                                                <?php
+                                                // cek password
+                                                if (password_verify($pass, $data['password'])) {
+                                                    $_SESSION['user']       = $data['username'];
+                                                    $_SESSION['level']      = 'Admin';
+                                                    header("location:http://localhost/puskesmas-master");
+                                                } else { ?>
+                                                    <br>
+                                                    <div class="row" style="height: 50px; text-align:center">
+                                                        <div class="col-md-1"></div>
+                                                        <div class="col-md-10">
+                                                            <div class="alert alert-danger alert-dismissable" role="alert">
+                                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                                                <span>
+                                                                    <strong>Password Salah!</strong>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1"></div>
+                                                    </div>
+                                                <?php } ?>
+                                                <?php } elseif (mysqli_num_rows($nakes) > 0) { ?>
+                                                <?php
+                                                // cek password
+                                                if (password_verify($pass, $data['password'])) {
+                                                    $_SESSION['user']       = $data['username'];
+                                                    $_SESSION['level']      = 'Nakes';
+                                                    header("location:http://localhost/puskesmas-master");
+                                                } else { ?>
+                                                    <br>
+                                                    <div class="row" style="height: 50px; text-align:center">
+                                                        <div class="col-md-1"></div>
+                                                        <div class="col-md-10">
+                                                            <div class="alert alert-danger alert-dismissable" role="alert">
+                                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                                                <span>
+                                                                    <strong>Password Salah!</strong>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1"></div>
+                                                    </div>
+                                                <?php } ?>
+                                            <?php } else { ?>
                                                 <br>
                                                 <div class="row" style="height: 50px; text-align:center">
                                                     <div class="col-md-1"></div>

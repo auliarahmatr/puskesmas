@@ -1,9 +1,9 @@
 <?php include_once('../_header.php'); ?>
 
     <div class="box">
-        <h1>DOKTER</h1>
+        <h1>Tenaga Kesehatan</h1>
         <h4>
-            <small>Tambah Data Dokter</small>
+            <small>Tambah Data Tenaga Kesehatan</small>
             <div class="pull-right">
             <a href="data.php" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i>Kembali</a>
             </div>
@@ -12,11 +12,22 @@
             <div class="col-lg-6 col-lg-offset-3">
                 <form action="proses.php" method="post">
                     <div class="form-group">
-                        <label for="nama">Nama Dokter</label>
+                        <label for="nama">Nama Tenaga Kesehatan</label>
                         <input type="text" name="nama" id="nama" class="form-control" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="spesialis">Spesialis</label>
+                        <label for="jenkel">Jenis Kelamin</label>
+                        <div>
+                            <label class="radio-inline">
+                            <input type="radio" name="jenkel" id="jenkel" value="L" required> Laki - Laki
+                            </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="jenkel" value="P" required> Perempuan
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Jabatan</label>
                         <input type="text" name="spesialis" id="spesialis" class="form-control" required>
                     </div>
                     <div class="form-group">
