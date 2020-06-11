@@ -5,8 +5,10 @@
     <h4>
         <small>Data Obat</small>
         <div class="pull-right">
+        <?php if ($_SESSION['level'] == 'Admin') { ?>
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
             <a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i>Tambah Data Obat</a>
+        <?php } ?>
         </div>
     </h4>
     <form method="post" name="proses">
@@ -17,7 +19,7 @@
                     <th>No.</th>
                     <th>Nama Obat</th>
                     <th>Keterangan</th>
-                    <th><center><i class="glyphicon glyphicon-cog"></i></center></th>
+                    <th><?php if ($_SESSION['level'] == 'Admin') { ?><center><i class="glyphicon glyphicon-cog"></i></center><?php } ?></th>
                 </tr>
             </thead> 
             <tbody>
@@ -30,8 +32,10 @@
                         <td><?=$data['nama_obat']?></td>
                         <td><?=$data['ket_obat']?></td>
                         <td align="center">
+                        <?php if ($_SESSION['level'] == 'Admin') { ?>
                             <a href="edit.php?id=<?=$data['id_obat']?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
                             <a href="del.php?id=<?=$data['id_obat']?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                        <?php } ?>
                         </td>
                     </tr>
             <?php

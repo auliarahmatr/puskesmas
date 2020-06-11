@@ -51,8 +51,10 @@
                     "orderable" : false,
                     "targets" : 8,
                     "render" : function(data, type, row) {
+                        <?php if ($_SESSION['level'] == 'Admin') { ?>
                         var btn = "<center><a href=\"edit.php?id="+data+"\" class=\"btn btn-warning btn-xs\"><i class=\"glyphicon glyphicon-edit\"></i></a> <a href=\"del.php?id="+data+"\" onclick=\"return confirm('Yakin akan menghapus data?')\" class=\"btn btn-danger btn-xs\"><i class=\"glyphicon glyphicon-trash\"></i></a></center>";
                         return btn;
+                        <?php } ?>
                     }
                 }
             ]

@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group">
                         <label for="jabatan">Jabatan</label>
-                        <input type="text" name="spesialis" id="spesialis" class="form-control" required>
+                        <input type="text" name="jabatan" id="jabatan" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>

@@ -3,9 +3,8 @@
 <div class="row">
     <div class="col-lg-12">
         <h1>Dashboard</h1>
-        <p>Selamat datang <mark><?= $_SESSION['level']; ?></mark> di website</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+        <p>Selamat datang <mark><?= $_SESSION['level']; ?></mark> di website Puskesmas Majasari</p>
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sembunyikan Menu</a>
     </div>
 </div>
 

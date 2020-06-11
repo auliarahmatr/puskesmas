@@ -6,7 +6,9 @@
         <small>Data Rekam Medis</small>
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
+            <?php if ($_SESSION['level'] == 'Admin' or $_SESSION['level'] == 'Dokter') { ?>
             <a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i>Tambah Data Rekam Medis</a>
+            <?php } ?>
         </div>
     </h4>
     <div class="table-responsive">
@@ -50,7 +52,9 @@
                         ?>
                         </td>
                         <td>
+                        <?php if ($_SESSION['level'] == 'Admin') { ?>
                         <a href="del.php?id=<?=$data['id_rm']?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin akan menghapus data?')"><i class="glyphicon glyphicon-trash"></i></a>
+                        <?php } ?>
                         </td>
                     </tr>
                 <?php

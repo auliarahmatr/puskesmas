@@ -44,7 +44,7 @@
                         <td><?=$data['alamat']?></td>
                         <td><?=$data['no_telp']?></td>
                         <td align="center">
-                            <a href="edit.php?id=<?=$data['id_dokter']?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="edit.php?id=<?=$data['id_nakes']?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
                         </td>
                     </tr>
             <?php

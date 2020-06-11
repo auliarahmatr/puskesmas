@@ -65,8 +65,8 @@ if (isset($_SESSION['user'])) {
                                             $data    = mysqli_fetch_assoc($admin);
 
                                             $nakes = mysqli_query($con, "SELECT * FROM tb_nakes WHERE username = '$user'");
-                                            $data    = mysqli_fetch_assoc($nakes);
-                                            
+                                            $data1    = mysqli_fetch_assoc($nakes);
+
                                             if (mysqli_num_rows($dokter) > 0) {
                                                 // cek password
                                                 if (password_verify($pass, $row['password'])) {
@@ -112,11 +112,11 @@ if (isset($_SESSION['user'])) {
                                                         <div class="col-md-1"></div>
                                                     </div>
                                                 <?php } ?>
-                                                <?php } elseif (mysqli_num_rows($nakes) > 0) { ?>
+                                            <?php } elseif (mysqli_num_rows($nakes) > 0) { ?>
                                                 <?php
                                                 // cek password
-                                                if (password_verify($pass, $data['password'])) {
-                                                    $_SESSION['user']       = $data['username'];
+                                                if (password_verify($pass, $data1['password'])) {
+                                                    $_SESSION['user']       = $data1['username'];
                                                     $_SESSION['level']      = 'Nakes';
                                                     header("location:http://localhost/puskesmas-master");
                                                 } else { ?>

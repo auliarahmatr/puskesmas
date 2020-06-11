@@ -10,6 +10,9 @@ if ($_SESSION['level'] == 'Admin') {
     $dokter = mysqli_query($con, "SELECT * FROM tb_dokter WHERE username = '$user'");
     $row    = mysqli_fetch_assoc($dokter);
 } elseif ($_SESSION['level'] == 'Nakes') {
+    $user   = $_SESSION['user'];
+    $nakes = mysqli_query($con, "SELECT * FROM tb_nakes WHERE username = '$user'");
+    $row    = mysqli_fetch_assoc($nakes);
 }
 ?>
 
@@ -18,14 +21,7 @@ if ($_SESSION['level'] == 'Admin') {
         <h1>My Profile</h1>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-10"></div>
-    <div class="col-sm-2">
-        <a href="gantipassword.php">
-            <button class="btn btn-lg btn-primary">Ganti Password</button>
-        </a>
-    </div>
-</div>
+
 <br>
 
 <?php if ($_SESSION['level'] == 'Admin') { ?>
@@ -79,7 +75,6 @@ if ($_SESSION['level'] == 'Admin') {
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Profile</a></li>
             </ul>
-
 
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
@@ -140,4 +135,89 @@ if ($_SESSION['level'] == 'Admin') {
     <!--/col-9-->
 <?php } ?>
 
+
+<?php if ($_SESSION['level'] == 'Nakes') { ?>
+    <div class="row">
+        <!-- <div class="col-sm-3">
+        <div class="text-center">
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        </div>
+        </hr><br>
+    </div> -->
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Profile</a></li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">
+                    <form class="form" action="#    " method="post" id="registrationForm">
+                        <div class="form-group">
+                            <div class="col-xs-8">
+                                <label for="first_name">
+                                    <h4>Nama Tenaga Kesehatan</h4>
+                                </label>
+                                <input type="text" class="form-control" name="nama_nakes" id="nama_nakes" value="<?= $row['nama_nakes'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-8">
+                                <label for="last_name">
+                                    <h4>Jenis Kelamin</h4>
+                                </label>
+                                <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?= $row['jenis_kelamin'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-8">
+                                <label for="last_name">
+                                    <h4>Jabatan</h4>
+                                </label>
+                                <input type="text" class="form-control" name="jabatan" id="jabatan" value="<?= $row['jabatan'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-8">
+                                <label for="last_name">
+                                    <h4>Alamat</h4>
+                                </label>
+                                <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $row['alamat'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-8">
+                                <label for="last_name">
+                                    <h4>No Telp</h4>
+                                </label>
+                                <input type="text" class="form-control" name="no_telp" id="no_telp" value="<?= $row['no_telp'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-8">
+                                <label for="last_name">
+                                    <h4>Username</h4>
+                                </label>
+                                <input type="text" class="form-control" name="username" id="username" value="<?= $row['username'] ?>">
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                </div>
+                <!--/tab-pane-->
+            </div>
+            <!--/tab-pane-->
+        </div>
+        <!--/tab-content-->
+    </div>
+    <!--/col-9-->
+<?php } ?>
+<br>
+<div class="pull-left">
+    <div class="col-sm-1">
+        <a href="gantipassword.php">
+            <button class="btn btn-md btn-primary">Ganti Password</button>
+        </a>
+    </div>
+</div>
 <?php include_once('../_footer.php'); ?>

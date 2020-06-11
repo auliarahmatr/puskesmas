@@ -4,7 +4,10 @@
     <div class="col-sm-12">
         <h1>My Profile</h1>
     </div>
-</div><br><br>
+</div>
+<div class="pull-right">
+            <a href="index.php" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i>Kembali</a>
+            </div><br><br>
 <div class="row">
     <div class="col-sm-8">
 
