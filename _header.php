@@ -20,6 +20,9 @@ if (!isset($_SESSION['user'])) {
     <link href="../_assets/css/simple-sidebar.css" rel="stylesheet">
     <link href="../_assets/libs/DataTables/datatables.min.css" rel="stylesheet">
     <link rel="icon" href="<?= base_url() ?>/_assets/hospital.png">
+    
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -35,53 +38,53 @@ if (!isset($_SESSION['user'])) {
                 </li>
 
                 <li>
-                    <a href="<?= base_url('dashboard') ?>">Dashboard</a>
+                    <a href="<?= base_url('dashboard') ?>"><i class="fas fa-home fa-lg"></i>   Dashboard</a>
                 </li>
 
                 <?php if ($_SESSION['level'] == 'Dokter' or $_SESSION['level'] == 'Nakes' or $_SESSION['level'] == 'Admin') { ?>
                     <li>
-                        <a href="<?= base_url('pasien/data.php') ?>">Data Pasien</a>
+                        <a href="<?= base_url('pasien/data.php') ?>"><i class="fa fa-database fa-lg" aria-hidden="true"></i>   Data Pasien</a>
                     </li>
                 <?php } ?>
 
                 <?php if ($_SESSION['level'] == 'Admin') { ?>
                     <li>
-                        <a href="<?= base_url('dokter/data.php') ?>">Data Dokter</a>
+                        <a href="<?= base_url('dokter/data.php') ?>"><i class="fa fa-database fa-lg" aria-hidden="true"></i>   Data Dokter</a>
                     </li>
                 <?php } ?>
 
                 <?php if ($_SESSION['level'] == 'Admin') { ?>
                     <li>
-                        <a href="<?= base_url('nakes') ?>">Data Tenaga Medis</a>
+                        <a href="<?= base_url('nakes') ?>"><i class="fa fa-database fa-lg" aria-hidden="true"></i>   Data Tenaga Kesehatan</a>
                     </li>
                 <?php } ?>
 
                 <?php if ($_SESSION['level'] == 'Admin' or $_SESSION['level'] == 'Nakes') { ?>
                     <li>
-                        <a href="<?= base_url('poliklinik/data.php') ?>">Data Poliklinik</a>
+                        <a href="<?= base_url('poliklinik/data.php') ?>"><i class="fa fa-database fa-lg" aria-hidden="true"></i>  Data Poliklinik</a>
                     </li>
                 <?php } ?>
 
                 <?php if ($_SESSION['level'] == 'Dokter' or $_SESSION['level'] == 'Nakes' or $_SESSION['level'] == 'Admin') { ?>
                     <li>
-                        <a href="<?= base_url('obat/data.php') ?>">Data Obat</a>
+                        <a href="<?= base_url('obat/data.php') ?>"><i class="fa fa-database fa-lg" aria-hidden="true"></i>   Data Obat</a>
                     </li>
                 <?php } ?>
 
                 <?php if ($_SESSION['level'] == 'Dokter' or $_SESSION['level'] == 'Nakes' or $_SESSION['level'] == 'Admin') { ?>
                     <li>
-                        <a href="<?= base_url('rekammedis/data.php') ?>">Rekam Medis</a>
+                        <a href="<?= base_url('rekammedis/data.php') ?>"><i class="fas fa-book fa-lg"></i>   Rekam Medis</a>
                     </li>
                 <?php } ?>
 
                 <?php if ($_SESSION['level'] == 'Dokter' or $_SESSION['level'] == 'Nakes' or $_SESSION['level'] == 'Admin') { ?>
                     <li>
-                        <a href="<?= base_url('profile') ?>">Profile</a>
+                        <a href="<?= base_url('profile') ?>"><i class="fas fa-user-md fa-lg"></i>   Profile</a>
                     </li>
                 <?php } ?>
 
                 <li>
-                    <a href="<?= base_url('auth/logout.php') ?>"><span class="text-danger">Logout</span></a>
+                    <a href="<?= base_url('auth/logout.php') ?>"><i class="fas fa-sign-out-alt fa-lg"></i>  <span class="text-danger">Logout</span></a>
                 </li>
             </ul>
         </div>

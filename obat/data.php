@@ -1,7 +1,7 @@
 <?php include_once('../_header.php'); ?>
 
 <div class="box">
-    <h1>OBAT</h1>
+    <h1>OBAT <i class="fas fa-pills"></i></h1>
     <h4>
         <small>Data Obat</small>
         <div class="pull-right">

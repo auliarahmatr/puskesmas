@@ -1,7 +1,7 @@
 <?php include_once('../_header.php'); ?>
 
 <div class="box">
-    <h1>DOKTER</h1>
+    <h1>DOKTER <i class="fas fa-user-md"></i></h1>
     <h4>
         <small>Data Dokter</small>
         <div class="pull-right">

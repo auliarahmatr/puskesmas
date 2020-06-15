@@ -1,7 +1,7 @@
 <?php include_once('../_header.php'); ?>
 
 <div class="box">
-    <h1>TENAGA KESEHATAN</h1>
+    <h1>TENAGA KESEHATAN <i class="fas fa-user"></i></h1>
     <h4>
         <small>Tenaga Kesehatan</small>
         <div class="pull-right">
