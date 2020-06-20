@@ -20,9 +20,10 @@ if (!isset($_SESSION['user'])) {
     <link href="../_assets/css/simple-sidebar.css" rel="stylesheet">
     <link href="../_assets/libs/DataTables/datatables.min.css" rel="stylesheet">
     <link rel="icon" href="<?= base_url() ?>/_assets/hospital.png">
-    
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    
 </head>
 
 <body>

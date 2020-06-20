@@ -44,7 +44,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="first_name">
                                     <h4>Nama Admin</h4>
                                 </label>
-                                <input type="text" class="form-control" name="nama_dokter" id="nama_dokter" value="<?= $row['nama_user'] ?>">
+                                <input type="text" class="form-control" readonly name="nama_dokter" id="nama_dokter" value="<?= $row['nama_user'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -52,7 +52,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Username</h4>
                                 </label>
-                                <input type="text" class="form-control" name="spesialis" id="spesialis" value="<?= $row['username'] ?>">
+                                <input type="text" class="form-control" readonly name="spesialis" id="spesialis" value="<?= $row['username'] ?>">
                             </div>
                         </div>
                     </form>
@@ -84,7 +84,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="first_name">
                                     <h4>Nama Dokter</h4>
                                 </label>
-                                <input type="text" class="form-control" name="nama_dokter" id="nama_dokter" value="<?= $row['nama_dokter'] ?>">
+                                <input readonly type="text" class="form-control" name="nama_dokter" id="nama_dokter" value="<?= $row['nama_dokter'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -92,7 +92,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Spesialis</h4>
                                 </label>
-                                <input type="text" class="form-control" name="spesialis" id="spesialis" value="<?= $row['spesialis'] ?>">
+                                <input readonly type="text" class="form-control" name="spesialis" id="spesialis" value="<?= $row['spesialis'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -100,7 +100,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Alamat</h4>
                                 </label>
-                                <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $row['alamat'] ?>">
+                                <input readonly type="text" class="form-control" name="alamat" id="alamat" value="<?= $row['alamat'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -108,7 +108,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>No Telp</h4>
                                 </label>
-                                <input type="text" class="form-control" name="no_telp" id="no_telp" value="<?= $row['no_telp'] ?>">
+                                <input readonly type="text" class="form-control" name="no_telp" id="no_telp" value="<?= $row['no_telp'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -116,7 +116,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Username</h4>
                                 </label>
-                                <input type="text" class="form-control" name="username" id="username" value="<?= $row['username'] ?>">
+                                <input readonly type="text" class="form-control" name="username" id="username" value="<?= $row['username'] ?>">
                             </div>
                         </div>
                     </form>
@@ -158,7 +158,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="first_name">
                                     <h4>Nama Tenaga Kesehatan</h4>
                                 </label>
-                                <input type="text" class="form-control" name="nama_nakes" id="nama_nakes" value="<?= $row['nama_nakes'] ?>">
+                                <input readonly type="text" class="form-control" name="nama_nakes" id="nama_nakes" value="<?= $row['nama_nakes'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -166,7 +166,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Jenis Kelamin</h4>
                                 </label>
-                                <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?= $row['jenis_kelamin'] ?>">
+                                <input readonly type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?= $row['jenis_kelamin'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -174,7 +174,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Jabatan</h4>
                                 </label>
-                                <input type="text" class="form-control" name="jabatan" id="jabatan" value="<?= $row['jabatan'] ?>">
+                                <input readonly type="text" class="form-control" name="jabatan" id="jabatan" value="<?= $row['jabatan'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -182,7 +182,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Alamat</h4>
                                 </label>
-                                <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $row['alamat'] ?>">
+                                <input readonly type="text" class="form-control" name="alamat" id="alamat" value="<?= $row['alamat'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -190,7 +190,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>No Telp</h4>
                                 </label>
-                                <input type="text" class="form-control" name="no_telp" id="no_telp" value="<?= $row['no_telp'] ?>">
+                                <input readonly type="text" class="form-control" name="no_telp" id="no_telp" value="<?= $row['no_telp'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -198,7 +198,7 @@ if ($_SESSION['level'] == 'Admin') {
                                 <label for="last_name">
                                     <h4>Username</h4>
                                 </label>
-                                <input type="text" class="form-control" name="username" id="username" value="<?= $row['username'] ?>">
+                                <input readonly type="text" class="form-control" name="username" id="username" value="<?= $row['username'] ?>">
                             </div>
                         </div>
                     </form>

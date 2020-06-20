@@ -1,5 +1,6 @@
 <?php include_once('../_header.php'); ?>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
     <div class="box">
         <h1>REKAM MEDIS</h1>
         <h4>
@@ -13,7 +14,7 @@
                 <form action="proses.php" method="post">
                     <div class="form-group">
                         <label for="pasien">Pasien</label>
-                        <select name="pasien" id="pasien" class="form-control" type="text" placeholder="Search.." required>
+                        <select name="pasien" id="pasien" class="form-control" type="text" placeholder="" required>
                             <option value="">- Pilih -</option>
                             <?php
                             $sql_pasien = mysqli_query($con, "SELECT * FROM tb_pasien ORDER BY nama_pasien ASC") or die (mysqli_error($con));
@@ -72,8 +73,15 @@
                         <input type="reset" name="reset" value="Reset" class="btn btn-default">
                     </div>
                 </form>
-                <script>
+                <script type="text/javascript">
                 CKEDITOR.replace( 'keluhan' );
+
+                $(document).ready(function() {
+                $("#pasien").select2();
+                 });
+                $(document).ready(function() {
+                $("#obat").select2();
+                 });
                 </script>
             </div>
         </div>
