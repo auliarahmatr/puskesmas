@@ -16,6 +16,17 @@
                         <input type="text" name="nama" id="nama" class="form-control" required autofocus>
                     </div>
                     <div class="form-group">
+                        <label for="jenkel">Jenis Kelamin</label>
+                        <div>
+                            <label class="radio-inline">
+                            <input type="radio" name="jenkel" id="jenkel" value="L" required> Laki - Laki
+                            </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="jenkel" value="P" required> Perempuan
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="spesialis">Spesialis</label>
                         <input type="text" name="spesialis" id="spesialis" class="form-control" required>
                     </div>

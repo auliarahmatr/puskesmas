@@ -15,11 +15,12 @@
         </div>
     </h4>
     <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover" id="rekammedis">
+        <table class="table table-striped table-bordered table-hover" id="rekam_medis">
             <thead>
                 <tr>
                     <th>No.</th>
                     <th>Nama Pasien</th>
+                    <th>Tanggal Lahir</th>
                     <th><i class="glyphicon glyphicon-cog"></i></th>
                 </tr>
             </thead> 
@@ -31,6 +32,7 @@
                     <tr>
                         <td><?=$no++?>.</td>
                         <td><?=$data['nama_pasien']?></td>
+                        <td><?=$data['tanggal_lahir']?></td>
                         <td>
                             <a href="detail_data.php?id=<?= $data['id_pasien'] ?>" class="btn btn-info btn-xs">
                                 <i class="glyphicon glyphicon-info-sign"></i>
@@ -45,10 +47,9 @@
     </div>
 </div>
 
-
 <script>
 $(document).ready(function() {
-    $('#rekammedis').DataTable({
+    $('#rekam_medis').DataTable({
         columnDefs: [
             {
                 "searchable": false,

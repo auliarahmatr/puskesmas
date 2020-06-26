@@ -21,6 +21,7 @@
                     </th>
                     <th>No.</th>
                     <th>Nama Dokter</th>
+                    <th>Jenis Kelamin</th>
                     <th>Spesialis</th>
                     <th>Alamat</th>
                     <th>No. Telepon</th>
@@ -38,6 +39,7 @@
                         </td>
                         <td><?=$no++?>.</td>
                         <td><?=$data['nama_dokter']?></td>
+                        <td><?=$data['jenis_kelamin']?></td>
                         <td><?=$data['spesialis']?></td>
                         <td><?=$data['alamat']?></td>
                         <td><?=$data['no_telp']?></td>
@@ -66,7 +68,7 @@ $(document).ready(function() {
             {
                 "searchable": false,
                 "orderable": false,
-                "targets": [0, 6]
+                "targets": [0, 7]
             }
         ],
         "order":[1, "asc"]

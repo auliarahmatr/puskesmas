@@ -8,6 +8,7 @@ use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 if(isset($_POST['add'])) {
     $uuid = Uuid::uuid4()->toString();
     $nama = trim(mysqli_real_escape_string($con, $_POST['nama']));
+    $jenkel = trim(mysqli_real_escape_string($con, $_POST['jenkel']));
     $spesialis = trim(mysqli_real_escape_string($con, $_POST['spesialis']));
     $alamat = trim(mysqli_real_escape_string($con, $_POST['alamat']));
     $no_telp = trim(mysqli_real_escape_string($con, $_POST['no_telp']));
@@ -20,6 +21,7 @@ if(isset($_POST['add'])) {
 } else if(isset($_POST['edit'])) {
     $id = $_POST['id'];
     $nama = trim(mysqli_real_escape_string($con, $_POST['nama']));
+    $jenkel = trim(mysqli_real_escape_string($con, $_POST['jenkel']));
     $spesialis = trim(mysqli_real_escape_string($con, $_POST['spesialis']));
     $alamat = trim(mysqli_real_escape_string($con, $_POST['alamat']));
     $no_telp = trim(mysqli_real_escape_string($con, $_POST['no_telp']));

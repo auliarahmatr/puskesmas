@@ -7,6 +7,10 @@ $querypasien = mysqli_query ($con, "SELECT * FROM tb_pasien WHERE id_pasien = '$
 
 $row = mysqli_fetch_assoc($queryrm);
 $keluhan = htmlspecialchars($row['keluhan']);
+
+// $sql_obat =  mysqli_query($con, "SELECT * FROM tb_rm_obat INNER JOIN tb_obat ON tb_rm_obat.id_obat = tb_obat.id_obat WHERE id_rm = '$data[id_rm]'" ) or die (mysqli_error($con)); (((DAN INI GUA COPAS DARI BACKUPAN GUA Y BUAT MUNCULIN DATA OBATNYA)))
+
+                        
 ?>
 
 <div class="box">
@@ -61,7 +65,8 @@ $keluhan = htmlspecialchars($row['keluhan']);
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Poliklinik</label>
-        <div class="col-sm-10">
+        
+        <div class="col-sm-1">
         <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="<?= $row['nama_poli'] ?>">
         </div>
       </div>
@@ -69,14 +74,15 @@ $keluhan = htmlspecialchars($row['keluhan']);
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Obat</label>
         <div class="col-sm-10">
-        <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="<?= $row['nama_pasien'] ?>">
+        <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="">
         </div>
       </div>
 
     </form>
 
     <button class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-print"></i></button>
-    <script type="text/javascript">
+
+    <!-- <script type="text/javascript">
     $(document).ready(function() {
         $('#rekammedis').DataTable({
             columnDefs: [
@@ -88,7 +94,7 @@ $keluhan = htmlspecialchars($row['keluhan']);
             ]
         });
     });
-    </script>
+    </script> -->
 </div>
 
 <?php include_once('../_footer.php'); ?>

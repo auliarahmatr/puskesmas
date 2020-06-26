@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20 Mei 2020 pada 20.33
+-- Generation Time: 26 Jun 2020 pada 15.05
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -30,11 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_dokter` (
   `id_dokter` varchar(50) NOT NULL,
-  `nama_dokter` varchar(90) NOT NULL,
-  `spesialis` varchar(50) NOT NULL,
+  `nama_dokter` varchar(40) NOT NULL,
+  `jenis_kelamin` enum('L','P') NOT NULL,
+  `spesialis` varchar(25) NOT NULL,
   `alamat` text NOT NULL,
-  `no_telp` varchar(15) NOT NULL,
-  `username` varchar(30) NOT NULL,
+  `no_telp` varchar(13) NOT NULL,
+  `username` varchar(10) NOT NULL,
   `password` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,8 +43,9 @@ CREATE TABLE `tb_dokter` (
 -- Dumping data untuk tabel `tb_dokter`
 --
 
-INSERT INTO `tb_dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_telp`, `username`, `password`) VALUES
-('74e808a1-40bf-444c-b69b-1e6dd6705d1e', 'Dr. Aulia Rahmat R', 'Umum', 'JL. BATU', '08122244005', '', '');
+INSERT INTO `tb_dokter` (`id_dokter`, `nama_dokter`, `jenis_kelamin`, `spesialis`, `alamat`, `no_telp`, `username`, `password`) VALUES
+('753fdf75-d16b-445d-9bb2-4ef09adefe6a', 'Dr. Anne', 'L', 'Umum', 'Jl. Otista Raya', '081389989344', 'dokter2', '$2y$10$fSPgVaW6bASHAqjv7hUkCufkM66Mb2rFKF61Kw3ljLH6Vg0YHzsZe'),
+('86742588-a48f-44fe-b5e4-ce959b7833c1', 'Dr. Aulia Rahmat R', 'L', 'Umum', 'Jl. Panglima Polim', '08122244005', 'dokter1', '$2y$10$OvAdpIb8I/rGY0t4OelTp.Ob3ukUfwf6SZGetUfGErUk9praujQVC');
 
 -- --------------------------------------------------------
 
@@ -53,15 +55,21 @@ INSERT INTO `tb_dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_
 
 CREATE TABLE `tb_nakes` (
   `id_nakes` varchar(50) NOT NULL,
-  `nama_nakes` varchar(90) NOT NULL,
+  `nama_nakes` varchar(40) NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
-  `jabatan` varchar(80) NOT NULL,
+  `jabatan` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
-  `no_telp` varchar(15) NOT NULL,
-  `foto` varchar(90) NOT NULL,
-  `username` varchar(30) NOT NULL,
+  `no_telp` varchar(13) NOT NULL,
+  `username` varchar(10) NOT NULL,
   `password` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_nakes`
+--
+
+INSERT INTO `tb_nakes` (`id_nakes`, `nama_nakes`, `jenis_kelamin`, `jabatan`, `alamat`, `no_telp`, `username`, `password`) VALUES
+('3b1ff5e3-db45-4a4d-a9ac-97097e5439b8', 'Polo', '', 'Perawat', 'Jl. Margonda', '083155667788', '', '$2y$10$sJD4Ywq2kRlJzQ.hHYQCHOt08YIOb/8uu5lY8yh.CkEzecD1scHtS');
 
 -- --------------------------------------------------------
 
@@ -71,7 +79,7 @@ CREATE TABLE `tb_nakes` (
 
 CREATE TABLE `tb_obat` (
   `id_obat` varchar(50) NOT NULL,
-  `nama_obat` varchar(100) NOT NULL,
+  `nama_obat` varchar(50) NOT NULL,
   `ket_obat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -83,8 +91,7 @@ INSERT INTO `tb_obat` (`id_obat`, `nama_obat`, `ket_obat`) VALUES
 ('224e9ef5-69cf-11ea-acae-00ff6990c3c7', 'EsterC', 'Vitamin C'),
 ('86071bfd-7511-11ea-b32f-00ff6990c3c7', 'Imboost', 'Suplemen Imun booster'),
 ('860797df-7511-11ea-b32f-00ff6990c3c7', 'Fufang', 'Suplemen'),
-('98bc1f09-3954-4b29-af61-310bed90bdd9', 'Glico', 'a'),
-('f2454f14-f42d-4c3f-b3e5-be400335ae89', 'AA', 'a');
+('da9b034d-1d98-4fae-87bb-3359bc87427a', 'Ever E', 'Vitamin E');
 
 -- --------------------------------------------------------
 
@@ -93,15 +100,15 @@ INSERT INTO `tb_obat` (`id_obat`, `nama_obat`, `ket_obat`) VALUES
 --
 
 CREATE TABLE `tb_pasien` (
-  `id_pasien` varchar(50) NOT NULL,
-  `nomor_identitas` varchar(30) NOT NULL,
-  `nama_pasien` varchar(90) NOT NULL,
+  `id_pasien` varchar(10) NOT NULL,
+  `nomor_identitas` varchar(16) NOT NULL,
+  `nama_pasien` varchar(40) NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `agama` varchar(20) NOT NULL,
+  `agama` varchar(12) NOT NULL,
   `alamat` text NOT NULL,
-  `nama_kk` varchar(50) NOT NULL,
-  `no_telp` varchar(15) NOT NULL
+  `nama_kk` varchar(40) NOT NULL,
+  `no_telp` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -109,13 +116,8 @@ CREATE TABLE `tb_pasien` (
 --
 
 INSERT INTO `tb_pasien` (`id_pasien`, `nomor_identitas`, `nama_pasien`, `jenis_kelamin`, `tanggal_lahir`, `agama`, `alamat`, `nama_kk`, `no_telp`) VALUES
-('13111292-fa63-4c0b-b935-2022f4ccad73', '112345', 'Angela', 'L', '0000-00-00', 'Islam', 'Jl Taman Purbakala Cipari', 'Asd', '21345'),
-('141ddd1b-73ae-48a4-87cc-5838db430fe6', '111111111111111111111111', 'Andriana', 'P', '1999-12-15', 'Islam', 'JL. BATU', 'Andreno', '02111345'),
-('26363aa0-8974-47d4-8142-3a7e0ac9f0a2', '444448965', 'Copper', 'L', '0000-00-00', '', 'QQW', '', '443'),
-('57939ed4-4af4-4787-9a03-b7d8430a07d3', '12223332765899', 'Adreno', 'L', '0000-00-00', '', 'XTZ', '', '12322'),
-('aef15c63-ef7e-47f6-a83e-d483d1812e92', '23331212', 'Simonn', 'P', '0000-00-00', '', 'Jakarta', '', '22222'),
-('c431617a-300c-497e-9637-64db4c892dc5', '556744823', 'Prism', 'L', '0000-00-00', '', 'FGF', '', '554'),
-('e94d99bc-4be5-451e-bc5f-658695cca0fa', '444448961', 'Iridium', 'P', '0000-00-00', '', 'AAA', '', '0001');
+('7cab302f-6', '0847563819284655', 'Luccrecia', 'P', '2020-06-20', 'Islam', 'Jl. Pondok Indah Raya', 'Simeon', '08125678764'),
+('9a5f75e2-0', '0975623981576835', 'Clara', 'P', '1989-06-22', 'Islam', 'Jl. Pejaten', 'Yere', '0812764528');
 
 -- --------------------------------------------------------
 
@@ -124,9 +126,9 @@ INSERT INTO `tb_pasien` (`id_pasien`, `nomor_identitas`, `nama_pasien`, `jenis_k
 --
 
 CREATE TABLE `tb_poliklinik` (
-  `id_poli` varchar(50) NOT NULL,
-  `nama_poli` varchar(50) NOT NULL,
-  `gedung` varchar(50) NOT NULL
+  `id_poli` int(2) NOT NULL,
+  `nama_poli` varchar(20) NOT NULL,
+  `gedung` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -134,8 +136,8 @@ CREATE TABLE `tb_poliklinik` (
 --
 
 INSERT INTO `tb_poliklinik` (`id_poli`, `nama_poli`, `gedung`) VALUES
-('fe948c83-7813-11ea-a2c1-00ff6990c3c7', 'Poli Gigi', 'A'),
-('fe949ee6-7813-11ea-a2c1-00ff6990c3c7', 'Poli Umum', 'A');
+(1, 'Poli Gigi', 'A'),
+(2, 'Poli Umum', 'A');
 
 -- --------------------------------------------------------
 
@@ -145,11 +147,11 @@ INSERT INTO `tb_poliklinik` (`id_poli`, `nama_poli`, `gedung`) VALUES
 
 CREATE TABLE `tb_rekammedis` (
   `id_rm` varchar(50) NOT NULL,
-  `id_pasien` varchar(50) NOT NULL,
+  `id_pasien` varchar(10) NOT NULL,
   `keluhan` text NOT NULL,
   `id_dokter` varchar(50) NOT NULL,
   `diagnosa` text NOT NULL,
-  `id_poli` varchar(50) NOT NULL,
+  `id_poli` varchar(2) NOT NULL,
   `tgl_periksa` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -158,7 +160,7 @@ CREATE TABLE `tb_rekammedis` (
 --
 
 INSERT INTO `tb_rekammedis` (`id_rm`, `id_pasien`, `keluhan`, `id_dokter`, `diagnosa`, `id_poli`, `tgl_periksa`) VALUES
-('3fe562a0-7ca5-47a2-b316-a21c3aec7254', '57939ed4-4af4-4787-9a03-b7d8430a07d3', 'Sakit perut', '74e808a1-40bf-444c-b69b-1e6dd6705d1e', 'Diare', 'fe949ee6-7813-11ea-a2c1-00ff6990c3c7', '2020-04-25');
+('d9c470ce-b537-4328-b443-b1cf6a07872c', '7cab302f-6', '<p>Pilek, Batuk</p>\r\n', '86742588-a48f-44fe-b5e4-ce959b7833c1', 'Flu', '2', '2020-06-20');
 
 -- --------------------------------------------------------
 
@@ -177,10 +179,9 @@ CREATE TABLE `tb_rm_obat` (
 --
 
 INSERT INTO `tb_rm_obat` (`id`, `id_rm`, `id_obat`) VALUES
-(2, '3fe562a0-7ca5-47a2-b316-a21c3aec7254', '224e9ef5-69cf-11ea-acae-00ff6990c3c7'),
-(3, '3fe562a0-7ca5-47a2-b316-a21c3aec7254', '860797df-7511-11ea-b32f-00ff6990c3c7'),
-(4, '3fe562a0-7ca5-47a2-b316-a21c3aec7254', '98bc1f09-3954-4b29-af61-310bed90bdd9'),
-(5, '3fe562a0-7ca5-47a2-b316-a21c3aec7254', '86071bfd-7511-11ea-b32f-00ff6990c3c7');
+(3, 'd9c470ce-b537-4328-b443-b1cf6a07872c', '224e9ef5-69cf-11ea-acae-00ff6990c3c7'),
+(4, 'd9c470ce-b537-4328-b443-b1cf6a07872c', 'da9b034d-1d98-4fae-87bb-3359bc87427a'),
+(5, 'd9c470ce-b537-4328-b443-b1cf6a07872c', '860797df-7511-11ea-b32f-00ff6990c3c7');
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,9 @@ ALTER TABLE `tb_pasien`
 -- Indexes for table `tb_poliklinik`
 --
 ALTER TABLE `tb_poliklinik`
-  ADD PRIMARY KEY (`id_poli`);
+  ADD PRIMARY KEY (`id_poli`),
+  ADD UNIQUE KEY `id_poli` (`id_poli`),
+  ADD UNIQUE KEY `id_poli_2` (`id_poli`);
 
 --
 -- Indexes for table `tb_rekammedis`
@@ -265,6 +268,12 @@ ALTER TABLE `tb_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tb_poliklinik`
+--
+ALTER TABLE `tb_poliklinik`
+  MODIFY `id_poli` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tb_rm_obat`
 --
 ALTER TABLE `tb_rm_obat`
@@ -279,8 +288,7 @@ ALTER TABLE `tb_rm_obat`
 --
 ALTER TABLE `tb_rekammedis`
   ADD CONSTRAINT `tb_rekammedis_ibfk_1` FOREIGN KEY (`id_dokter`) REFERENCES `tb_dokter` (`id_dokter`),
-  ADD CONSTRAINT `tb_rekammedis_ibfk_2` FOREIGN KEY (`id_pasien`) REFERENCES `tb_pasien` (`id_pasien`),
-  ADD CONSTRAINT `tb_rekammedis_ibfk_3` FOREIGN KEY (`id_poli`) REFERENCES `tb_poliklinik` (`id_poli`);
+  ADD CONSTRAINT `tb_rekammedis_ibfk_2` FOREIGN KEY (`id_pasien`) REFERENCES `tb_pasien` (`id_pasien`);
 
 --
 -- Ketidakleluasaan untuk tabel `tb_rm_obat`

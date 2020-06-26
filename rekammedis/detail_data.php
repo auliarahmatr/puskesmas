@@ -85,7 +85,7 @@ $row = mysqli_fetch_assoc($query);
                 {
                     "searchable": false,
                     "orderable": false,
-                    "targets": 8
+                    "targets": 4
                 }
             ]
         });
