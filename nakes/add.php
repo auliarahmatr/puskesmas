@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label for="jenkel">Jenis Kelamin</label>
                         <div>
-                            <label class="radio-inline">
+                        <label class="radio-inline">
                             <input type="radio" name="jenkel" id="jenkel" value="L" required> Laki - Laki
                             </label>
                             <label class="radio-inline">

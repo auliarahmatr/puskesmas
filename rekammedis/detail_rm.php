@@ -4,13 +4,9 @@
 $id = $_GET['id'];
 $queryrm = mysqli_query($con, "SELECT * FROM tb_rekammedis INNER JOIN tb_pasien ON tb_rekammedis.id_pasien = tb_pasien.id_pasien INNER JOIN tb_dokter ON tb_rekammedis.id_dokter = tb_dokter.id_dokter INNER JOIN tb_poliklinik ON tb_rekammedis.id_poli = tb_poliklinik.id_poli WHERE tb_rekammedis.id_rm = '$id'");
 $querypasien = mysqli_query ($con, "SELECT * FROM tb_pasien WHERE id_pasien = '$id'");
-
+// $sql_obat =  mysqli_query($con, "SELECT * FROM tb_rm_obat INNER JOIN tb_obat ON tb_rm_obat.id_obat = tb_obat.id_obat WHERE tb_rekammedis.id_rm = '$id'"); 
 $row = mysqli_fetch_assoc($queryrm);
-$keluhan = htmlspecialchars($row['keluhan']);
-
-// $sql_obat =  mysqli_query($con, "SELECT * FROM tb_rm_obat INNER JOIN tb_obat ON tb_rm_obat.id_obat = tb_obat.id_obat WHERE id_rm = '$data[id_rm]'" ) or die (mysqli_error($con)); (((DAN INI GUA COPAS DARI BACKUPAN GUA Y BUAT MUNCULIN DATA OBATNYA)))
-
-                        
+$keluhan = htmlspecialchars($row['keluhan']);                      
 ?>
 
 <div class="box">
@@ -28,21 +24,24 @@ $keluhan = htmlspecialchars($row['keluhan']);
     <form>
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Tanggal</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">:</div>
+        <div class="col-md-0">
           <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="<?= $row['tgl_periksa'] ?>">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nama Pasien</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">:</div>
+        <div class="col-md-0">
           <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="<?= $row['nama_pasien'] ?>">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Keluhan</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">:</div>
+        <div class="col-md-0">
           <?php 
           echo $row['keluhan'] 
           ?>
@@ -51,29 +50,32 @@ $keluhan = htmlspecialchars($row['keluhan']);
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Diagnosa</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">:</div>
+        <div class="col-md-0">
         <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="<?= $row['diagnosa'] ?>">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nama Dokter</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">:</div>
+        <div class="col-md-0">
         <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="<?= $row['nama_dokter'] ?>">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Poliklinik</label>
-        
-        <div class="col-sm-1">
+        <div class="col-sm-1">:</div>
+        <div class="col-md-0">
         <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="<?= $row['nama_poli'] ?>">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Obat</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">:</div>
+        <div class="col-md-0">
         <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="">
         </div>
       </div>
