@@ -1,3 +1,4 @@
+  
 <?php include_once('../_header.php'); ?>
 
 <div class="box">
@@ -14,10 +15,12 @@
         <table class="table table-striped table-bordered table-hover" id="pasien">
             <thead>
                 <tr>
+                    <th>ID Pasien</th>
                     <th>Nomor Identitas</th>
                     <th>Nama Pasien</th>
                     <th>Jenis Kelamin</th>
                     <th>Tgl Lahir</th>
+                    <th>Gol Darah</th>
                     <th>Agama</th>
                     <th>Alamat</th>
                     <th>Nama KK</th>
@@ -49,7 +52,7 @@
                 {
                     "searchable" : false,
                     "orderable" : false,
-                    "targets" : 8,
+                    "targets" : 10,
                     "render" : function(data, type, row) {
                         <?php if ($_SESSION['level'] == 'Admin') { ?>
                         var btn = "<center><a href=\"edit.php?id="+data+"\" class=\"btn btn-warning btn-xs\"><i class=\"glyphicon glyphicon-edit\"></i></a> <a href=\"del.php?id="+data+"\" onclick=\"return confirm('Yakin akan menghapus data?')\" class=\"btn btn-danger btn-xs\"><i class=\"glyphicon glyphicon-trash\"></i></a></center>";

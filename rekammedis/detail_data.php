@@ -25,6 +25,16 @@ $row = mysqli_fetch_assoc($query);
 
     <div class="row container">
         <div class="col-lg-3">
+            Id Pasien
+        </div>
+        <div class="col-lg-1">:</div>
+        <div class="col-lg-4">
+            <p><?= $row['id_pasien'] ?></p>
+        </div>
+    </div>
+
+    <div class="row container">
+        <div class="col-lg-3">
             Nama
         </div>
         <div class="col-lg-1">:</div>
@@ -35,13 +45,24 @@ $row = mysqli_fetch_assoc($query);
 
     <div class="row container">
         <div class="col-lg-3">
-            No Identitas
+            Jenis Kelamin </div>
+        <div class="col-lg-1">:</div>
+        <div class="col-lg-4">
+            <p><?= $row['jenis_kelamin'] ?></p>
+        </div>
+    </div>
+            
+    <div class="row container">
+        <div class="col-lg-3">
+            Tanggal Lahir
         </div>
         <div class="col-lg-1">:</div>
         <div class="col-lg-4">
-            <p><?= $row['nomor_identitas'] ?></p>
+            <p><?= $row['tanggal_lahir'] ?></p>
         </div>
-    </div><br>
+    </div>
+    <br>
+
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover" id="rekammedis">
             <thead>

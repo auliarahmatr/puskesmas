@@ -41,6 +41,18 @@
                         <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="<?=$data['tanggal_lahir']?>" required>
                     </div>
                     <div class="form-group">
+                        <label for="gol_darah">Gol Darah</label>
+                        <div>
+                        <select name="gol_darah" id="gol_darah" class="form-control" value="<?=$data['gol_darah']?>" required>
+                            <option value="">- Pilih -</option>
+                            <option value="A">A</option>
+                            <option value="AB">AB</option>
+                            <option value="B">B</option>
+                            <option value="O">O</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="agama">Agama</label>
                         <input type="text" name="agama" id="agama" class="form-control" value="<?=$data['agama']?>" required>
                     </div>

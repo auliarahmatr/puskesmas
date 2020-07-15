@@ -15,11 +15,11 @@
                     <div class="form-group">
                         <label for="pasien">Pasien</label>
                         <select name="pasien" id="pasien" class="form-control" type="text" placeholder="" required>
-                            <option value="">- Pilih -</option>
+                            <option disabled selected>- Pilih -</option>
                             <?php
                             $sql_pasien = mysqli_query($con, "SELECT * FROM tb_pasien ORDER BY nama_pasien ASC") or die (mysqli_error($con));
                             while($data_pasien = mysqli_fetch_array($sql_pasien)) {
-                                echo '<option value="'.$data_pasien['id_pasien'].'">'.$data_pasien['nama_pasien'].'</option>';
+                                echo '<option value="'.$data_pasien['id_pasien'].'">'.$data_pasien['id_pasien'] . ' - ' .$data_pasien['nama_pasien'].'</option>';
                             } ?>
                         </select>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="dokter">Dokter</label>
                         <select name="dokter" id="dokter" class="form-control" required>
-                            <option value="">- Pilih -</option>
+                            <option disabled selected>- Pilih -</option>
                             <?php
                             $sql_dokter = mysqli_query($con, "SELECT * FROM tb_dokter ORDER BY nama_dokter ASC") or die (mysqli_error($con));
                             while($data_dokter = mysqli_fetch_array($sql_dokter)) {
@@ -39,13 +39,20 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="diagnosa">Diagnosa</label>
-                        <textarea name="diagnosa" id="diagnosa" class="form-control "required></textarea>
+                        <label for="icd">Diagnosa (ICD)</label>
+                        <select multiple name="icd[]" id="icd" class="form-control" size="6" required>
+                            <option disabled value="">- Pilih -</option>
+                            <?php
+                            $sql_icd = mysqli_query($con, "SELECT * FROM tb_icd ORDER BY nama_icd ASC") or die (mysqli_error($con));
+                            while($data_icd = mysqli_fetch_array($sql_icd)) {
+                                echo '<option value="'.$data_icd['kode_icd'].'">'.$data_icd['kode_icd'] . ' - ' .$data_icd['nama_icd'].'</option>';
+                            } ?>
+                                </select>
                     </div>
                     <div class="form-group">
                         <label for="poli">Poliklinik</label>
                         <select name="poli" id="poli" class="form-control" required>
-                            <option value="">- Pilih -</option>
+                            <option disabled value="">- Pilih -</option>
                             <?php
                             $sql_poli = mysqli_query($con, "SELECT * FROM tb_poliklinik ORDER BY nama_poli ASC") or die (mysqli_error($con));
                             while($data_poli = mysqli_fetch_array($sql_poli)) {
@@ -53,7 +60,7 @@
                             } ?>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="obat">Obat</label>
                         <select multiple name="obat[]" id="obat" class="form-control" size="6" required>
                             <option value="">- Pilih -</option>
@@ -63,7 +70,7 @@
                                 echo '<option value="'.$data_obat['id_obat'].'">'.$data_obat['nama_obat'].'</option>';
                             } ?>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="tanggal">Tanggal Periksa</label>
                         <input type="date" name="tanggal" id="tanggal" value="<?=date('Y-m-d')?>" class="form-control" required>
@@ -80,8 +87,14 @@
                 $("#pasien").select2();
                  });
                 $(document).ready(function() {
-                $("#obat").select2();
+                $("#dokter").select2();
                  });
+                $(document).ready(function() {
+                $("#icd").select2();
+                 });
+                // $(document).ready(function() {
+                // $("#obat").select2();
+                //  });
                 </script>
             </div>
         </div>

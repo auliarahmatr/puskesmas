@@ -30,21 +30,23 @@ $primaryKey = 'id_pasien';
 // indexes
 $no = 1;
 $columns = array(
-    array( 'db' => 'nomor_identitas', 'dt' => 0 ),
-    array( 'db' => 'nama_pasien',  'dt' => 1 ),
+    array( 'db' => 'id_pasien', 'dt' => 0 ),
+    array( 'db' => 'nomor_identitas', 'dt' => 1 ),
+    array( 'db' => 'nama_pasien',  'dt' => 2 ),
     array( 
         'db' => 'jenis_kelamin',
-        'dt' => 2,
+        'dt' => 3,
         'formatter' => function ($data, $row) {
             return $data == "L" ? "Laki-Laki" : "Perempuan";
         }
     ),
-    array( 'db' => 'tanggal_lahir',     'dt' => 3 ),
-    array( 'db' => 'agama',     'dt' => 4 ),
-    array( 'db' => 'alamat',     'dt' => 5 ),
-    array( 'db' => 'nama_kk',     'dt' => 6 ),
-    array( 'db' => 'no_telp',     'dt' => 7 ),
-    array( 'db' => 'id_pasien',     'dt' => 8 ),
+    array( 'db' => 'tanggal_lahir',     'dt' => 4 ),
+    array( 'db' => 'gol_darah',     'dt' => 5 ),
+    array( 'db' => 'agama',     'dt' => 6 ),
+    array( 'db' => 'alamat',     'dt' => 7 ),
+    array( 'db' => 'nama_kk',     'dt' => 8 ),
+    array( 'db' => 'no_telp',     'dt' => 9 ),
+    array( 'db' => 'id_pasien',     'dt' => 10 ),
 );
  
 // SQL server connection information

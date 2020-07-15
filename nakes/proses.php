@@ -6,7 +6,7 @@ use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 if(isset($_POST['add'])) {
-    $uuid = Uuid::uuid4()->toString();
+    $id_nakes = trim(mysqli_real_escape_string($con, $_POST['id_nakes']));
     $nama = trim(mysqli_real_escape_string($con, $_POST['nama']));
     $jenkel = trim(mysqli_real_escape_string($con, $_POST['jenkel']));
     $jabatan = trim(mysqli_real_escape_string($con, $_POST['jabatan']));
@@ -16,7 +16,7 @@ if(isset($_POST['add'])) {
     $pass = trim(mysqli_real_escape_string($con, $_POST['password']));
     $passhash = password_hash($pass, PASSWORD_DEFAULT);
     mysqli_query($con, "INSERT INTO tb_nakes (id_nakes, nama_nakes, jenis_kelamin, jabatan, alamat, no_telp, username, password) 
-                            VALUES ('$uuid', '$nama', '$jenkel', '$jabatan', '$alamat', '$no_telp', '$username', '$passhash')") or die (mysqli_error($con));
+                            VALUES ('$id_nakes', '$nama', '$jenkel', '$jabatan', '$alamat', '$no_telp', '$username', '$passhash')") or die (mysqli_error($con));
     echo "<script>window.location='data.php';</script>";  
 } else if(isset($_POST['edit'])) {
     $id = $_POST['id'];

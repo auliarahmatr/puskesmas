@@ -9,9 +9,9 @@ if(isset($_POST['add'])) {
     $total = $_POST['total'];
     for ($i=1; $i<=$total; $i++) { 
         
-        $nama = trim(mysqli_real_escape_string($con, $_POST['nama-'.$i]));
-        $gedung = trim(mysqli_real_escape_string($con, $_POST['gedung-'.$i]));
-        $sql = mysqli_query($con, "INSERT INTO tb_poliklinik (nama_poli, gedung) VALUES ('$nama', '$gedung')") or die (mysqli_error($con)); 
+        $kode_icd = trim(mysqli_real_escape_string($con, $_POST['kode_icd-'.$i]));
+        $nama_icd = trim(mysqli_real_escape_string($con, $_POST['nama_icd-'.$i]));
+        $sql = mysqli_query($con, "INSERT INTO tb_icd (kode_icd, nama_icd) VALUES ('$kode_icd', '$nama_icd')") or die (mysqli_error($con)); 
     }
     if($sql) {
         echo "<script>alert('".$total." data berhasil ditambahkan'); window.location='data.php';</script>";

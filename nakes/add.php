@@ -11,6 +11,24 @@
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3">
                 <form action="proses.php" method="post">
+                <div class="form-group">
+                        <?php
+                        $nom = mysqli_query($con, "SELECT id_nakes FROM tb_nakes ORDER BY id_nakes DESC");
+                        $kd_nakes = mysqli_fetch_array($nom);
+                        $kode = $kd_nakes['id_nakes'];
+
+                        $urut = substr($kode, 2, 2);
+                        $tambah = (int) $urut + 1;
+
+                        if(strlen($tambah) == 1){
+                            $format = "TK"."0".$tambah;
+                        } else {
+                            $format = "TK".$tambah;
+                        }
+                        ?> 
+                        <label for="id_nakes">ID Nakes</label>
+                        <input type="text" name="id_nakes" id="id_nakes" class="form-control" value="<?php echo $format;?>" readonly required autofocus>
+                    </div>
                     <div class="form-group">
                         <label for="nama">Nama Tenaga Kesehatan</label>
                         <input type="text" name="nama" id="nama" class="form-control" required autofocus>

@@ -19,6 +19,7 @@
             <thead>
                 <tr>
                     <th>No.</th>
+                    <th>Id Pasien</th>
                     <th>Nama Pasien</th>
                     <th>Tanggal Lahir</th>
                     <th><i class="glyphicon glyphicon-cog"></i></th>
@@ -31,6 +32,7 @@
                 ?>
                     <tr>
                         <td><?=$no++?>.</td>
+                        <td><?=$data['id_pasien']?></td>
                         <td><?=$data['nama_pasien']?></td>
                         <td><?=$data['tanggal_lahir']?></td>
                         <td>
@@ -54,7 +56,7 @@ $(document).ready(function() {
             {
                 "searchable": false,
                 "orderable": false,
-                "targets": 3,
+                "targets": 4,
             }
         ]
     });

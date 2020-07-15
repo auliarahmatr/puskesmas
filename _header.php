@@ -66,9 +66,9 @@ if (!isset($_SESSION['user'])) {
                     </li>
                 <?php } ?>
 
-                <?php if ($_SESSION['level'] == 'Dokter' or $_SESSION['level'] == 'Nakes' or $_SESSION['level'] == 'Admin') { ?>
+                <?php if ($_SESSION['level'] == 'Dokter' or $_SESSION['level'] == 'Admin') { ?>
                     <li>
-                        <a href="<?= base_url('obat/data.php') ?>"><i class="fa fa-database fa-lg" aria-hidden="true"></i>   Data Obat</a>
+                        <a href="<?= base_url('icd/data.php') ?>"><i class="fa fa-database fa-lg" aria-hidden="true"></i>   Data ICD</a>
                     </li>
                 <?php } ?>
 

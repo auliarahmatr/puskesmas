@@ -55,6 +55,18 @@
 <script>
 $(document).ready(function() {
     $('#obat').DataTable({
+        "processing": true,
+        dom : 'Bfrtip',
+        buttons : [
+                {
+                    extend : 'pdf',
+                    oriented : 'Landscape',
+                    pageSize : 'A4',
+                    title : 'Data Obat Puskesmas Majasari',
+                    download : 'open'
+                },
+                'csv', 'excel', 'print', 'copy'
+            ],
         columnDefs: [
             {
                 "searchable": false,
