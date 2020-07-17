@@ -174,13 +174,13 @@ if (isset($_SESSION['user'])) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="block-content bg-body-light">
+                                        <!-- <div class="block-content bg-body-light">
                                             <div class="form-group text-center">
                                                 <a class="link-effect text-muted mr-10 mb-5 d-inline-block" href="">
                                                     <i class="fa fa-plus-circle mr-5"></i> Buat Akun
                                                 </a>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </form>
                                 <!-- END Sign In Form -->

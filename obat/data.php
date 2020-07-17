@@ -18,7 +18,7 @@
                 <tr>
                     <th>No.</th>
                     <th>Nama Obat</th>
-                    <th>Keterangan</th>
+                    <th>Jenis Obat</th>
                     <th><?php if ($_SESSION['level'] == 'Admin') { ?><center><i class="glyphicon glyphicon-cog"></i></center><?php } ?></th>
                 </tr>
             </thead> 
@@ -30,7 +30,7 @@
                     <tr>
                         <td><?=$no++?>.</td>
                         <td><?=$data['nama_obat']?></td>
-                        <td><?=$data['ket_obat']?></td>
+                        <td><?=$data['jenis_obat']?></td>
                         <td align="center">
                         <?php if ($_SESSION['level'] == 'Admin') { ?>
                             <a href="edit.php?id=<?=$data['id_obat']?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>

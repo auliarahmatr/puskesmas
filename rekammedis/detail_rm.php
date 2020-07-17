@@ -77,7 +77,7 @@ $keluhan = htmlspecialchars($row['keluhan']);
       </div>
     </div>
 
-    <div class="form-group row">
+    <!-- <div class="form-group row">
       <label class="col-sm-2 col-form-label">Obat</label>
       <div class="col-sm-1">:</div>
       <div class="col-md-0">
@@ -85,7 +85,7 @@ $keluhan = htmlspecialchars($row['keluhan']);
           <input type="text" readonly style="border: 0;" class="form-control-plaintext" value="- <?= $data['nama_obat'] ?>">
         <?php endforeach; ?>
       </div>
-    </div>
+    </div> -->
 
   </form>
 

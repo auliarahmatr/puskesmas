@@ -16,7 +16,7 @@
                         <input type="text" name="nama" id="nama" class="form-control" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="ket">Keterangan</label>
+                        <label for="ket">Jenis Obat </label>
                         <textarea name="ket" id="ket" class="form-control" required></textarea>
                     </div>
                     <div class="form-group pull-right">

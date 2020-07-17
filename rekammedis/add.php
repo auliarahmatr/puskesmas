@@ -11,7 +11,7 @@
         </h4>
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3">
-                <form action="proses.php" method="post">
+                <form action="addobat.php" method="post">
                     <div class="form-group">
                         <label for="pasien">Pasien</label>
                         <select name="pasien" id="pasien" class="form-control" type="text" placeholder="" required>
@@ -48,6 +48,10 @@
                                 echo '<option value="'.$data_icd['kode_icd'].'">'.$data_icd['kode_icd'] . ' - ' .$data_icd['nama_icd'].'</option>';
                             } ?>
                                 </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="obat">Jumlah Obat</label>
+                        <input type="number" name="jumlahobat" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="poli">Poliklinik</label>
